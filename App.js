@@ -1,31 +1,30 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
+import { useDimensions } from "@react-native-community/hooks";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  ImageBackground,
+  Image,
+} from "react-native";
+useDimensions;
 
 export default function App() {
-  let x = 1;
-  console.log("Exe");
-
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hi!</Text>
-      <TouchableWithoutFeedback onPress={() => console.log("Pressed Image")}>
+    <View>
+      <ImageBackground source={require("./app/assets/background.jpg")}>
         <Image
-          source={{
-            width: 300,
-            height: 300,
-            uri: "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
-          }}
+          style={styles.stretch}
+          source={require("./app/assets/logo-red.png")}
         />
-      </TouchableWithoutFeedback>
-    </SafeAreaView>
+      </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  stretch: {
+    width: 50,
+    height: 200,
+    resizeMode: "stretch",
   },
 });
