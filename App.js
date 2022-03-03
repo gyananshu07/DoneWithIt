@@ -9,24 +9,24 @@ import {
 
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
-import color from "./app/config/color";
+import colors from "./app/config/colors";
+import AppButton from "./app/components/AppButton";
+import Card from "./app/components/Card";
+import ListingDetailsScreens from "./app/screens/ListingDetailsScreens";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.border}></View>
-    </View>
-  );
+  return <ViewImageScreen />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 15,
+    paddingTop: 30,
+    backgroundColor: "#f8f4f4",
   },
   border: {
-    backgroundColor: color.blue,
+    backgroundColor: colors.blue,
     width: 100,
     height: 100,
     borderWidth: 10,
